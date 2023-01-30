@@ -1,46 +1,35 @@
+import React  from "react";
+import { BrowserRouter,Route,Routes } from "react-router-dom";
 import './App.css';
-import profile from "../src/img.png";
-import email from "./email.jpg";
-import pass from "./pass.png";
-function LoginUi() {
-  return (
-    <div className="main">
-     <div className="sub-main">
-       <div>
-         <div className="imgs">
-           <div className="container-image">
-             <img src={profile} alt="profile" className="profile"/>
+import { Login } from "./components/Login.jsx";
+import { Register } from "./components/Register.jsx";
+import Welcome from "./components/Welcome";
 
-           </div>
+function App() {
+  // const [currentForm, setcurrentForm] = useState('Login')
+  // const toggleForm = (formName)=>{
+  //   setcurrentForm(formName);
+  // }
 
-
-         </div>
-         <div>
-           <h1>Login Page</h1>
-           <div>
-             <img src={email} alt="email" className="email"/>
-             <input type="text" placeholder="user name" className="name"/>
-           </div>
-           <div className="second-input">
-             <img src={pass} alt="pass" className="email"/>
-             <input type="password" placeholder="user name" className="name"/>
-           </div>
-          <div className="login-button">
-          <button>Login</button>
-          </div>
-           
-            <p className="link">
-              <a href="#">Forgot password ?</a> Or<a href="#">Sign Up</a>
-            </p>
-           
- 
-         </div>
-       </div>
-       
-
-     </div>
+  return(
+    <BrowserRouter>
+    <div className="App">
+    <Routes>
+      <Route path='/' element={<Login/>} /> 
+      <Route path="/signup" element={<Register />} />
+      <Route path="/welcome" element={<Welcome />} />
+    </Routes>
+    
+     {/* <div className="App">
+      {
+        currentForm === "Login"?  <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm} />
+      }
+     
+    </div>  */}
     </div>
+    </BrowserRouter>
   );
-}
+  }
 
-export default LoginUi;
+  
+export default App;
