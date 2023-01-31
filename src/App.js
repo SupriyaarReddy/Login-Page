@@ -10,7 +10,7 @@ function App() {
   // const toggleForm = (formName)=>{
   //   setcurrentForm(formName);
   // }
-
+  
   return(
     <BrowserRouter>
     <div className="App">
@@ -19,7 +19,6 @@ function App() {
       <Route path="/signup" element={<Register />} />
       <Route path="/welcome" element={<Welcome />} />
     </Routes>
-    
      {/* <div className="App">
       {
         currentForm === "Login"?  <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm} />

@@ -18,17 +18,23 @@ export const Login = (props) =>{
       <div className="form-container">
        
         <h2 >USER LOGIN</h2>
-      <form className="login-form"  onSubmit={handleSubmit}>
+       <form className="login-form"  onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input value={email} onChange={(e)=> setEmail(e.target.value)} type="email" placeholder="your456@gmail.com" id="email" name="email"/>
         <label htmlFor="password">Password</label>
         <input value={pass} onChange={(e)=> setPass(e.target.value)} type="password" id="password" name="password"/>
         
         <Link to='/welcome' className="nav-link">Login</Link>
+<div>
+  <p>Or</p>
+</div>
+       
+        <Link to='/welcome' className="nav-link">Login through outlook</Link>
       
       </form>
       <Link className="link-btn" to='/signup'>Dont have an account? Register Here</Link>
       </div>
+      
       </>
     )
     
